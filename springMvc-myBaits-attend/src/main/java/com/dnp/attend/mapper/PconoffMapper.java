@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Pconoff;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface PconoffMapper extends Mapper<Pconoff> {
+public interface PconoffMapper extends MyMapper<Pconoff> {
 }

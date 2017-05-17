@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Weekendwork;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface WeekendworkMapper extends Mapper<Weekendwork> {
+public interface WeekendworkMapper extends MyMapper<Weekendwork> {
 }

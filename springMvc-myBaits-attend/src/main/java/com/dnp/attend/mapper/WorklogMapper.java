@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Worklog;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface WorklogMapper extends Mapper<Worklog> {
+public interface WorklogMapper extends MyMapper<Worklog> {
 }

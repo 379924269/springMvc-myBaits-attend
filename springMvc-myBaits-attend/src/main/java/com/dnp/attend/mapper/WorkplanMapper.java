@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Workplan;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface WorkplanMapper extends Mapper<Workplan> {
+public interface WorkplanMapper extends MyMapper<Workplan> {
 }

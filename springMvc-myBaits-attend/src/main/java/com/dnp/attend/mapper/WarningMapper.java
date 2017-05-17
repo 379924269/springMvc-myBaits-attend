@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Warning;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface WarningMapper extends Mapper<Warning> {
+public interface WarningMapper extends MyMapper<Warning> {
 }

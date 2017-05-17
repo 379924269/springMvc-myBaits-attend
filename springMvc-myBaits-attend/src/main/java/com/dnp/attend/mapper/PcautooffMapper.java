@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Pcautooff;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface PcautooffMapper extends Mapper<Pcautooff> {
+public interface PcautooffMapper extends MyMapper<Pcautooff> {
 }

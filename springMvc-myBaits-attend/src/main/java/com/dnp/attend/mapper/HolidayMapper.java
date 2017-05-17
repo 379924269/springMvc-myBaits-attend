@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Holiday;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface HolidayMapper extends Mapper<Holiday> {
+public interface HolidayMapper extends MyMapper<Holiday> {
 }

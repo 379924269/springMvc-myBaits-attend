@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Role;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface RoleMapper extends Mapper<Role> {
+public interface RoleMapper extends MyMapper<Role> {
 }

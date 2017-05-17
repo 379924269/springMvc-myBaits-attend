@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Worktime;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface WorktimeMapper extends Mapper<Worktime> {
+public interface WorktimeMapper extends MyMapper<Worktime> {
 }

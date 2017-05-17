@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Attend;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface AttendMapper extends Mapper<Attend> {
+public interface AttendMapper extends MyMapper<Attend> {
 }

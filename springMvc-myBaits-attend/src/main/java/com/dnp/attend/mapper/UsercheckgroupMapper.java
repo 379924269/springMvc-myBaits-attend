@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Usercheckgroup;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface UsercheckgroupMapper extends Mapper<Usercheckgroup> {
+public interface UsercheckgroupMapper extends MyMapper<Usercheckgroup> {
 }

@@ -1,7 +1,7 @@
 package com.dnp.attend.mapper;
 
 import com.dnp.attend.model.Thumbsup;
-import tk.mybatis.mapper.common.Mapper;
+import com.dnp.attend.util.MyMapper;
 
-public interface ThumbsupMapper extends Mapper<Thumbsup> {
+public interface ThumbsupMapper extends MyMapper<Thumbsup> {
 }

@@ -22,56 +22,32 @@
  * THE SOFTWARE.
  */
 
-package com.dnp.attend.server.impl;
+package com.dnp.attend.service;
 
 import java.util.List;
+import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import tk.mybatis.mapper.common.Mapper;
-
-import com.dnp.attend.server.IService;
+import com.dnp.attend.vo.PageVo;
 
 /**
- * Description: 通用接口的通用的实现类
- * 
- * @since: 2017年5月2日 下午3:35:00
- * 
- * @author xhxing
+ * 通用service接口
  */
-public abstract class BaseService<T> implements IService<T> {
+@Service
+public interface IService<T> {
 
-	@Autowired
-	protected Mapper<T> mapper;
+	T selectByKey(Object key);
 
-	public Mapper<T> getMapper() {
-		return mapper;
-	}
+	int save(T entity);
 
-	@Override
-	public T selectByKey(Object key) {
-		return mapper.selectByPrimaryKey(key);
-	}
+	int delete(Object key);
 
-	public int save(T entity) {
-		return mapper.insert(entity);
-	}
+	int updateAll(T entity);
 
-	public int delete(Object key) {
-		return mapper.deleteByPrimaryKey(key);
-	}
+	int updateNotNull(T entity);
 
-	public int updateAll(T entity) {
-		return mapper.updateByPrimaryKey(entity);
-	}
-
-	public int updateNotNull(T entity) {
-		return mapper.updateByPrimaryKeySelective(entity);
-	}
-
-	public List<T> selectByExample(Object example) {
-		return mapper.selectByExample(example);
-	}
+	List<T> selectByExample(Object example);
 	
-	// TODO 其他...
+    Map<String, Object> selectAllPage(PageVo pageVo, String search);
 }
