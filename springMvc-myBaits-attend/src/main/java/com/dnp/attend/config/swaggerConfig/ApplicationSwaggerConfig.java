@@ -27,10 +27,10 @@ public class ApplicationSwaggerConfig {
 	private ApiInfo apiInfo() {
 		// Contact contact = new Contact("华仔", "", "379924269@qq.com");
 		Contact contact = new Contact("", "", "");
-		return new ApiInfo("适配（deviceAdaption） API文档",// 大标题 title
-				"使用Swagger UI构建SpringMVC REST风格的可视化文档。  注意：“大多接口的访问都要登陆（“用户API”的登陆接口登陆），如果没有权限请联系管理员",// 小标题
+		return new ApiInfo("考勤（attend） API文档",// 大标题 title
+				"使用Swagger UI构建SpringMVC REST风格的可视化文档。",// 小标题
 				"3.0",// 版本
-				"http://127.0.0.1:80/mybatis-spring/v2/api-docs",// termsOfServiceUrl
+				"http://127.0.0.1:80/attend/v2/api-docs",// termsOfServiceUrl
 				contact,// 作者
 				"",// 链接显示文字
 				""// 网站链接
