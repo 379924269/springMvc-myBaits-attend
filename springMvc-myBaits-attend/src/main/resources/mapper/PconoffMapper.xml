@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dnp.attend.mapper.PconoffMapper" >
+  <resultMap id="BaseResultMap" type="com.dnp.attend.model.Pconoff" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="pcStatus" property="pcstatus" jdbcType="INTEGER" />
+    <result column="pcTime" property="pctime" jdbcType="TIMESTAMP" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="attendId" property="attendid" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>

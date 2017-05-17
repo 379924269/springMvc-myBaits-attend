@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dnp.attend.mapper.PcautooffMapper" >
+  <resultMap id="BaseResultMap" type="com.dnp.attend.model.Pcautooff" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="offTime" property="offtime" jdbcType="TIMESTAMP" />
+    <result column="offStatus" property="offstatus" jdbcType="INTEGER" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="checkerId" property="checkerid" jdbcType="INTEGER" />
+    <result column="checkTime" property="checktime" jdbcType="TIMESTAMP" />
+    <result column="checkStatus" property="checkstatus" jdbcType="INTEGER" />
+    <result column="attendId" property="attendid" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>

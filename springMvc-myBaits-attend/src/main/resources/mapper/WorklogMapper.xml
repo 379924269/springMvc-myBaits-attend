@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dnp.attend.mapper.WorklogMapper" >
+  <resultMap id="BaseResultMap" type="com.dnp.attend.model.Worklog" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="finishStatus" property="finishstatus" jdbcType="INTEGER" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="actualDate" property="actualdate" jdbcType="TIMESTAMP" />
+    <result column="createdDate" property="createddate" jdbcType="TIMESTAMP" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="LONGVARCHAR" />
+  </resultMap>
+</mapper>

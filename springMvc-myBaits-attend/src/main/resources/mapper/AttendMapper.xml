@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dnp.attend.mapper.AttendMapper" >
+  <resultMap id="BaseResultMap" type="com.dnp.attend.model.Attend" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="dutyDate" property="dutydate" jdbcType="TIMESTAMP" />
+    <result column="startWorkStatus" property="startworkstatus" jdbcType="INTEGER" />
+    <result column="startWorkTime" property="startworktime" jdbcType="TIMESTAMP" />
+    <result column="appId" property="appid" jdbcType="INTEGER" />
+    <result column="endWorkTime" property="endworktime" jdbcType="TIMESTAMP" />
+    <result column="endWorkStatus" property="endworkstatus" jdbcType="INTEGER" />
+    <result column="overTimeStatus" property="overtimestatus" jdbcType="INTEGER" />
+    <result column="startOverTime" property="startovertime" jdbcType="TIMESTAMP" />
+    <result column="endOverTime" property="endovertime" jdbcType="TIMESTAMP" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="offline" property="offline" jdbcType="INTEGER" />
+    <result column="appTimeQuantum" property="apptimequantum" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>
