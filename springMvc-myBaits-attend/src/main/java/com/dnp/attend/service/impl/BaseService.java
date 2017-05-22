@@ -29,8 +29,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.entity.Example;
 
+import com.dnp.attend.model.User;
 import com.dnp.attend.service.IService;
+import com.dnp.attend.util.JsonUtil;
+import com.dnp.attend.vo.PageVo;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.github.pagehelper.util.StringUtil;
 
 /**
  * Description: 通用接口的通用的实现类
@@ -72,6 +79,30 @@ public abstract class BaseService<T> implements IService<T> {
 	public List<T> selectByExample(Object example) {
 		return mapper.selectByExample(example);
 	}
-	
+
+	/**
+	 * <p>
+	 * 获取所有信息（分页）
+	 * 
+	 * @param pageVo
+	 *            分页参数
+	 * @param searchField
+	 *            模糊查询字段
+	 * @param search
+	 *            模糊查询信息
+	 * @return 素有信息， 封装好了的jsonstring分页信息
+	 */
+	public String findAll(PageVo pageVo, String searchField, String search) {
+		PageHelper.startPage(pageVo.getOffset(), pageVo.getLimit());
+		Example example = new Example(User.class);
+		Example.Criteria criteria = example.createCriteria();
+		if (StringUtil.isNotEmpty(search)) {
+			criteria.andLike(searchField, "%" + search + "%");
+		}
+		List<T> list = mapper.selectByExample(example);
+		PageInfo<T> pageInfo = new PageInfo<>(list);
+		return JsonUtil.pageInJson((int) pageInfo.getTotal(), pageInfo.getList()).toString();
+	}
+
 	// TODO 其他...
 }

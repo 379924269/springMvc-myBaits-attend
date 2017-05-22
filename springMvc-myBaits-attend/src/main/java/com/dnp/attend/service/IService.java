@@ -25,7 +25,6 @@
 package com.dnp.attend.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -48,6 +47,18 @@ public interface IService<T> {
 	int updateNotNull(T entity);
 
 	List<T> selectByExample(Object example);
-	
-    Map<String, Object> selectAllPage(PageVo pageVo, String search);
+
+	/**
+	 * <p>
+	 * 获取所有信息（分页）
+	 * 
+	 * @param pageVo
+	 *            分页参数
+	 * @param searchField
+	 *            模糊查询字段
+	 * @param search
+	 *            模糊查询信息
+	 * @return 素有信息， 封装好了的jsonstring分页信息
+	 */
+	public String findAll(PageVo pageVo, String searchField, String search);
 }

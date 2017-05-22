@@ -23,6 +23,7 @@
 
 	<bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter" />
 
+	<!-- XML转换器 -->
 	<bean id="marshallingHttpMessageConverter" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
 		<property name="marshaller" ref="castorMarshaller" />
 		<property name="unmarshaller" ref="castorMarshaller" />
@@ -40,6 +41,7 @@
 		</property>
 	</bean>
 
+	<!-- 供marshaller和unmarshaller使用 -->
 	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller" />
 	<!--信息转换 - 结束 -->
 

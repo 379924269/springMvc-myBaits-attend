@@ -33,7 +33,7 @@ public class UserController {
 	@ResponseBody
 	public Object getList(PageVo pageVo,
 			@ApiParam(name = "search", value = "模糊查询字段（名称或email）", required = false) @RequestParam(required = false, defaultValue = "") String search) {
-		return null;
+		return userService.findAll(pageVo, "name", search);
 	}
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)

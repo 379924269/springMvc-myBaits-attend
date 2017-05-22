@@ -23,5 +23,5 @@ public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
 	 *            模糊查询字段
 	 * @return List<Map<String, Object>>
 	 */
-	List<Map<String, Object>> selectAllPage(@Param("search") String search);
+	List<Map<String, Object>> findAllRelation(@Param("search") String search);
 }
