@@ -50,7 +50,7 @@ public interface IService<T> {
 
 	/**
 	 * <p>
-	 * 获取所有信息（分页）
+	 * 获取所有信息（分页）一张表
 	 * 
 	 * @param pageVo
 	 *            分页参数
@@ -61,4 +61,26 @@ public interface IService<T> {
 	 * @return 素有信息， 封装好了的jsonstring分页信息
 	 */
 	public String findAll(PageVo pageVo, String searchField, String search);
+
+	/**
+	 * <p>
+	 * 获取所有信息（分页）,多张表
+	 * 
+	 * @param pageVo
+	 *            分页参数
+	 * @param search
+	 *            模糊查询信息
+	 * @return 素有信息， 封装好了的jsonstring分页信息
+	 */
+	public String findAllRelation(PageVo pageVo, String search);
+
+	/**
+	 * <p>
+	 * 获取某一条的详细信息
+	 * 
+	 * @param id ID
+	 * @return
+	 */
+	public String findDeatilRelation(Integer id);
+
 }

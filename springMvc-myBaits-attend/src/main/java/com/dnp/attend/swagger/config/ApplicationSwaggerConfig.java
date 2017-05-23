@@ -1,4 +1,4 @@
-package com.dnp.attend.config.swaggerConfig;
+package com.dnp.attend.swagger.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

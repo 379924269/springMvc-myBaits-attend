@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.dnp.attend.mapper.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.dnp.attend.model.User" >
-    <!--
-      WARNING - @mbggenerated
-    -->
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="sex" property="sex" jdbcType="INTEGER" />
-    <result column="alias" property="alias" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="photo" property="photo" jdbcType="VARCHAR" />
-    <result column="mac" property="mac" jdbcType="VARCHAR" />
-    <result column="roleId" property="roleid" jdbcType="INTEGER" />
-    <result column="orgId" property="orgid" jdbcType="INTEGER" />
-    <result column="createdDate" property="createddate" jdbcType="TIMESTAMP" />
-    <result column="token" property="token" jdbcType="VARCHAR" />
-  </resultMap>
+<mapper namespace="com.dnp.attend.mapper.UserMapper">
+	<resultMap id="BaseResultMap" type="com.dnp.attend.model.User">
+		<!-- WARNING - @mbggenerated -->
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="INTEGER" />
+		<result column="alias" property="alias" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="photo" property="photo" jdbcType="VARCHAR" />
+		<result column="mac" property="mac" jdbcType="VARCHAR" />
+		<result column="roleId" property="roleid" jdbcType="INTEGER" />
+		<result column="orgId" property="orgid" jdbcType="INTEGER" />
+		<result column="createdDate" property="createddate" jdbcType="TIMESTAMP" />
+		<result column="token" property="token" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="findAllRelation" resultType="java.util.HashMap">
+		SELECT u.id, u.name, u.sex, u.alias, u.password, u.photo, u.mac, u.roleId, r.name AS roleName, r.level
+		AS roleLevel, r.delayTime AS roleDelayTime
+		,u.orgId, o.name AS orgName, o.description AS orgDescription, o.parentId AS orgParentId
+		FROM `user` u
+		LEFT JOIN `role` r ON u.roleId = r.id
+		LEFT JOIN `org` o ON u.orgId = o.id
+	</select>
 </mapper>

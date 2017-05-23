@@ -1,18 +1,11 @@
-package com.dnp.attend.model;
+package com.dnp.attend.swagger.responseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.Date;
 
-import org.apache.commons.lang.StringUtils;
-
-public class User {
+public class UserEntity {
 	/**
 	 * ID
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	/**
@@ -46,22 +39,34 @@ public class User {
 	private String mac;
 
 	/**
-	 * 角色id
+	 * ID
 	 */
-	@Column(name = "roleId")
-	private Integer roleid;
+	private Integer roleId;
+
+	/**
+	 * 角色名称
+	 */
+	private String roleName;
+
+	/**
+	 * 角色等级
+	 */
+	private Integer level;
+
+	/**
+	 * 申请延迟时间，单位天，如1天、2天等
+	 */
+	private Integer delaytime;
 
 	/**
 	 * 部门id
 	 */
-	@Column(name = "orgId")
-	private Integer roleId;
+	private Integer orgId;
 
 	/**
 	 * 创建时间
 	 */
-	@Column(name = "createdDate")
-	private String createdDate;
+	private Date createdDate;
 
 	/**
 	 * 令牌，默认为空，用户每次登陆重新生成
@@ -209,34 +214,44 @@ public class User {
 		this.roleId = roleId;
 	}
 
-	public String getCreatedDate() {
-		if (!StringUtils.isEmpty(createdDate)) {
-			return StringUtils.substringBeforeLast(createdDate, ".0");
-		}
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public Integer getLevel() {
+		return level;
+	}
+
+	public void setLevel(Integer level) {
+		this.level = level;
+	}
+
+	public Integer getDelaytime() {
+		return delaytime;
+	}
+
+	public void setDelaytime(Integer delaytime) {
+		this.delaytime = delaytime;
+	}
+
+	public Integer getOrgId() {
+		return orgId;
+	}
+
+	public void setOrgId(Integer orgId) {
+		this.orgId = orgId;
+	}
+
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
-	}
-
-	/**
-	 * 获取角色id
-	 * 
-	 * @return roleId - 角色id
-	 */
-	public Integer getRoleid() {
-		return roleid;
-	}
-
-	/**
-	 * 设置角色id
-	 * 
-	 * @param roleid
-	 *            角色id
-	 */
-	public void setRoleid(Integer roleid) {
-		this.roleid = roleid;
 	}
 
 	/**

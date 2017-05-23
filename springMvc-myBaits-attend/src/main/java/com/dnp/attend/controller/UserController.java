@@ -24,7 +24,7 @@ import com.dnp.attend.vo.PageVo;
 @Api(value = "userController", description = "用户信息")
 @RestController
 public class UserController {
-	
+
 	@Autowired
 	private UserService userService;
 
@@ -33,13 +33,13 @@ public class UserController {
 	@ResponseBody
 	public Object getList(PageVo pageVo,
 			@ApiParam(name = "search", value = "模糊查询字段（名称或email）", required = false) @RequestParam(required = false, defaultValue = "") String search) {
-		return userService.findAll(pageVo, "name", search);
+		return userService.findAllRelation(pageVo, search);
 	}
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	@ApiOperation(value = "country的detail", notes = "country的detail", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Object getDetail(@ApiParam(name = "id", value = "用户id", required = true) @PathVariable("id") Integer id) {
-		return userService.selectByKey(id);
+		return userService.findDeatilRelation(id);
 	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
@@ -47,7 +47,7 @@ public class UserController {
 	public void add(User user) {
 		userService.save(user);
 	}
-	
+
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	@ApiOperation(value = "修改user", notes = "修改user", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public void update(User user) {

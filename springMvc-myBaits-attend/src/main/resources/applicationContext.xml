@@ -93,5 +93,5 @@
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	<bean id="ApplicationSwaggerConfig" class="com.dnp.attend.config.swaggerConfig.ApplicationSwaggerConfig" />
+	<bean id="ApplicationSwaggerConfig" class="com.dnp.attend.swagger.config.ApplicationSwaggerConfig" />
 </beans>
