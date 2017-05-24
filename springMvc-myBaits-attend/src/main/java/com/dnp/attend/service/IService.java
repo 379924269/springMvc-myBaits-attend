@@ -82,5 +82,7 @@ public interface IService<T> {
 	 * @return
 	 */
 	public String findDeatilRelation(Integer id);
+	
+	
 
 }

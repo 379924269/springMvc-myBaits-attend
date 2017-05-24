@@ -49,13 +49,13 @@ public class User {
 	 * 角色id
 	 */
 	@Column(name = "roleId")
-	private Integer roleid;
+	private Integer roleId;
 
 	/**
 	 * 部门id
 	 */
 	@Column(name = "orgId")
-	private Integer roleId;
+	private Integer orgId;
 
 	/**
 	 * 创建时间
@@ -220,23 +220,12 @@ public class User {
 		this.createdDate = createdDate;
 	}
 
-	/**
-	 * 获取角色id
-	 * 
-	 * @return roleId - 角色id
-	 */
-	public Integer getRoleid() {
-		return roleid;
+	public Integer getOrgId() {
+		return orgId;
 	}
 
-	/**
-	 * 设置角色id
-	 * 
-	 * @param roleid
-	 *            角色id
-	 */
-	public void setRoleid(Integer roleid) {
-		this.roleid = roleid;
+	public void setOrgId(Integer orgId) {
+		this.orgId = orgId;
 	}
 
 	/**

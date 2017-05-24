@@ -16,12 +16,39 @@
 		<result column="token" property="token" jdbcType="VARCHAR" />
 	</resultMap>
 
-	<select id="findAllRelation" resultType="java.util.HashMap">
+	<sql id="relation">
 		SELECT u.id, u.name, u.sex, u.alias, u.password, u.photo, u.mac, u.roleId, r.name AS roleName, r.level
-		AS roleLevel, r.delayTime AS roleDelayTime
-		,u.orgId, o.name AS orgName, o.description AS orgDescription, o.parentId AS orgParentId
+		AS roleLevel, r.delayTime AS
+		roleDelayTime
+		,u.orgId,
+		o.name AS orgName, o.description AS orgDescription, o.parentId AS orgParentId
 		FROM `user` u
-		LEFT JOIN `role` r ON u.roleId = r.id
-		LEFT JOIN `org` o ON u.orgId = o.id
+		LEFT JOIN `role` r ON u.roleId =
+		r.id
+		LEFT JOIN `org` o ON
+		u.orgId = o.id
+	</sql>
+
+	<select id="findAllRelation" resultType="java.util.HashMap">
+		<include refid="relation"></include>
+		<where>
+			<if test="search != null and search != ''">
+				u.name like concat('%',concat(#{search}, '%'))
+			</if>
+		</where>
+	</select>
+
+	<select id="findById" resultType="java.util.HashMap">
+		<include refid="relation"></include>
+		<where>
+			u.id = #{id}
+		</where>
+	</select>
+
+	<select id="findByOrgId" resultType="java.util.HashMap">
+		<include refid="relation"></include>
+		<where>
+			u.orgId = #{orgId}
+		</where>
 	</select>
 </mapper>

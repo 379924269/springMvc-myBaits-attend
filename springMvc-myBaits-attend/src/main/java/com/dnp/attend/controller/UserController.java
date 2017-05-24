@@ -37,7 +37,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
-	@ApiOperation(value = "country的detail", notes = "country的detail", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ApiOperation(value = "用户个人信息接口", notes = "用户个人信息接口", httpMethod = "GET", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Object getDetail(@ApiParam(name = "id", value = "用户id", required = true) @PathVariable("id") Integer id) {
 		return userService.findDeatilRelation(id);
 	}
@@ -59,4 +59,13 @@ public class UserController {
 	public void delete(@ApiParam(name = "id", value = "用户id", required = true) @PathVariable("id") Integer id) {
 		userService.delete(id);
 	}
+
+	@RequestMapping(value = "/user/org/{id}", method = RequestMethod.GET)
+	@ApiOperation(value = "指定部门所用户信息", notes = "指定部门所用户信息", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	public Object getUsersInOrg(PageVo pageVo, @ApiParam(name = "id", value = "用户id", required = true) @PathVariable("id") Integer id,
+			@ApiParam(name = "search", value = "模糊查询字段（名称或email）", required = false) @RequestParam(required = false, defaultValue = "") String search) {
+		return userService.findByOrgId(pageVo, search, id);
+	}
+
 }
