@@ -102,6 +102,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 		</dependency>
 		<dependency>
@@ -145,7 +149,7 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.2</version>
 		</dependency>
-		
+
 		<!--Apache Shiro所需的jar包 -->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -258,7 +262,18 @@
 			<version>3.4</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter -->
+		<dependency>
+			<groupId>com.thetransactioncompany</groupId>
+			<artifactId>cors-filter</artifactId>
+			<version>2.5</version>
+		</dependency>
 	</dependencies>
 	<!-- Maven 使用dependencyManagement 元素来提供了一种管理依赖版本号的方式 -->
 	<dependencyManagement>
